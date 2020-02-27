@@ -1,6 +1,40 @@
-const db = require('../database/data.json');
 
-const login = (userN, pwd)=>{
+const db = {
+    "Users": [
+        {
+            "id": "1",
+            "email": "tea@example.com",
+            "password": "abc"
+        },
+        {
+            "id": "2",
+            "email": "tea2@example.com",
+            "password": "abc"
+        },
+        {
+            "id": "3",
+            "email": "john@example.com",
+            "password": "abc"
+        },
+        {
+            "id": "4",
+            "email": "john.c@example.com",
+            "password": "abc"
+        },
+        {
+            "id": "5",
+            "email": "jhont@example.com",
+            "password": "abc"
+        },
+        {
+            "id": "6",
+            "email": "qube@example.com",
+            "password": "abc"
+        }
+    ]
+}
+
+const login =  (userN, pwd)=>{
     const username = userN;
     const password = pwd;
     const usersObject = db.Users
@@ -10,7 +44,8 @@ const login = (userN, pwd)=>{
     if(findUser){
         if(password === findUser.password || null ){
             const auth = 'dashboard.html';
-            window.location.href = auth;
+            //window.location.href = auth;
+            console.log('logged')
         }else{
             const response = {
                 statusCode : 401,
@@ -27,7 +62,7 @@ const login = (userN, pwd)=>{
         }
 
         return response;
-        //console.log(response)
+       // console.log(response)
     }
 }
 

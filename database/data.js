@@ -1,4 +1,4 @@
-{
+const db = {
     "Users": [
         {
             "id": "1",
@@ -33,3 +33,5 @@
     ]
 }
 
+
+module.exports = db
